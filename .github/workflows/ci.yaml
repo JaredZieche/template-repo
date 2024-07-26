@@ -1,0 +1,12 @@
+name: init
+on:
+  create:
+
+permissions:
+  contents: write
+  issues: write
+jobs:
+  initialize:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello World"
