@@ -7,6 +7,7 @@ permissions:
   issues: write
 jobs:
   initialize:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - name: Dump GitHub context
