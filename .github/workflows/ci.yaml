@@ -1,5 +1,8 @@
 name: init
-on: create
+on:
+  push:
+    branches:
+      - main
 
 permissions:
   contents: write
@@ -7,7 +10,8 @@ permissions:
 
 jobs:
   initialize:
-    if: ${{ github.event.created && github.repository != 'jaredzieche/template-repo' }}
+    if: >-
+      ${{ !github.event.repository.is_template }}
     runs-on: ubuntu-latest
     steps:
       - name: Dump GitHub context
