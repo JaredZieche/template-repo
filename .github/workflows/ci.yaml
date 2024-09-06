@@ -1,6 +1,6 @@
 name: init
 on:
-  create:
+  create
 
 permissions:
   contents: write
