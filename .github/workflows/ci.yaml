@@ -2,12 +2,6 @@ name: init
 on:
   create
 
-permissions:
-  contents: write
-  issues: write
-env:
-  TEST_SECRET: ${{ secrets.TEST_SECRET }}
-  
 jobs:
   initialize:
     runs-on: ubuntu-latest
