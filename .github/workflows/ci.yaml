@@ -1,7 +1,5 @@
 name: init
-on:
-  create:
-  workflow_dispatch:
+on: create
 
 permissions:
   contents: write
@@ -9,6 +7,7 @@ permissions:
 
 jobs:
   initialize:
+    if: ${{ github.event.created && github.repository != 'jaredzieche/template-repo' }}
     runs-on: ubuntu-latest
     steps:
       - name: Dump GitHub context
