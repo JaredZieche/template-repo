@@ -1,9 +1,14 @@
 name: init
 on:
-  push:
+  pull_request:
+    types: [closed]
     branches:
-      - main
-
+      - "main"
+    paths-ignore:
+      - "README.adoc"
+      - "docs/*"
+      - ".github/**"
+      - ".git*"
 permissions:
   contents: write
   actions: write
